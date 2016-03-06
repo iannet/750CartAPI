@@ -6,11 +6,11 @@ HOST: http://api.securecheckout.com/v1/cart/
 750 Cart is an API for creating customer facing applications powered by the 750 Commerce e-commerce platform.
 
 
-## Group Categories
-Resources related to Categories.
+## Group Products
+Resources related to Products.
 
 
-### Retrieve List of Categories [GET /categories]
+### Retrieve Product by SKU [GET /products/:sku]
 
 + Request (application/json)
 
@@ -28,11 +28,31 @@ Resources related to Categories.
             
     + Body
 
-            {"1":{"id":"1","name":"New Releases","sort":"1","status":"Active","description":"Explore our small variety of current release Acme Vineyards wines.","short_description":"","extended_description":"","image":"//s3.amazonaws.com/efcheckout/acmev/category/1-8891.jpg","image_2":"//s3.amazonaws.com/efcheckout/acmev/category-2/1-4190.jpg","image_3":"//s3.amazonaws.com/efcheckout/acmev/category-3/1-7775.jpg"},"2":{"id":"2","name":"Past Vintages","sort":"2","status":"Active","description":"Explore past vintages of Acme wines.","short_description":"","extended_description":"","image":"//s3.amazonaws.com/efcheckout/acmev/category/2-8644.jpg","image_2":"//s3.amazonaws.com/efcheckout/acmev/category-2/2-6628.jpg","image_3":"//s3.amazonaws.com/efcheckout/acmev/category-3/2-1813.jpg"}}
+            {"id":"14","name":"2014 Ros\u00e9","sku":"12312312312","price":"45","description":"<em>Hundred year old vines have worked their roots deep, deep into the hillside soils of the storied Black Hawk Vineyard in Oakville to produce small amounts of the sultry, supple fruit used in this 100% Cabernet Sauvignon.<\/em> <br><br>Aged in a mix of the finest new and used oak for 18 months, then bottled and cellared for an additional 24 months deep in the heart of our century-old cave system, this wine is redolent of black fruit with a hint of spice box, tar, and graphite.  <strong>Drink now or age for up to 50 years.<\/strong>","status":"Active","accolades_01":"","additional_description":"\"Unreal. A Napa Valley Cab that is truly worthy drinking.\"<br>\u2014Wine Review Online","aging":"18 Months in French Barrels","alcohol":"16.5","appellation":"Oakville, Napa Valley","blend":"100% Cabernet Sauvignon","bottle_count":"1","bottle_size":"","case_production":"60","cost":"0.00","country":"","custom01":"","custom02":"","custom03":"","farming_method":"","featured_product":"Yes","free_shipping":"","harvest_date":"October 19, 2007","image":"\/\/s3.amazonaws.com\/efcheckout\/acmev\/product\/12312312312-1725.jpg","image_alt":"\/\/s3.amazonaws.com\/efcheckout\/acmev\/product-alt\/AV10NVCS-4211.jpg","label":"","max_purchase_quantity":"36","min_purchase_quantity":"","not_availible_message":"","oak":"40% new, 60% 2 year old","ph":"","product_category":"Wine","qb_account":"","qb_class":"","qb_sku":"","region":"","release_date":"September 1, 2012","residual_sugar":"","retail_price":"65.00","review":"Hello","reviewer":"Acme","score":"99","shipping_included":"0","shipping_offer_min":"","short_description":"Destined to be a classic example of an outstanding vintage from the legendary Napa Valley.","soil":"","stainless":"","starting_quantity":"99","status_availability":"Active","subtitle":"Napa Valley","sub_region":"","ta":".06","tasting_notes_pdf":"","tax_exempt":"0","upc":"","varietal":"","vineyard":"Black Hawk","vintage":"2007","winemaker":"Pepe LePepe","wine_type":"RED","categories":{"1":{"id":"1","name":"New Releases","sort":"2"}},"quantity":"12000"}
 
 ## Group Cart
 Resources related to Cart.
 
+
+### Get Inventory [GET /inventory]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Session-Id: r2sf0ogulkccntoe02llkc5010
+            X-Auth-Token: 05dd174e4d66beb667a69dbef1ebb096169862f1
+    + Body
+
+            
++ Response 200 (application/json)
+
+    + Headers
+
+            
+    + Body
+
+            {"AV09NVCS":"0","AV09NVCS1":-3,"AV09NVCH":"0","AV10NVRB":15,"AV08NVCH":"0","AV10NVRCS":3983,"asdfasdf":"1000","875433":"999","2011asdfasdfsad":"994","12312312312":11971,"123124214":"894","11111":"997","454646878":"467","555":"840","5398":"76","asdfasdfasdf":"0","78DHU":38,"322345345":"304","a123123123123":"591","asdfasdfasdfadsf":"0","ti6r7r76f":"419","ANNUAL":"10000","5876987":"893","123123213123123213":599,"212nvcs":651,"AV11NVRCS":"499","sdfadfasdfds":"600","asdfasdf323":"12000","asdfasdfasdfas":"9000","as3423423":"6","yyuhjij":"842"}
 
 ### Retrieve Cart Information [GET /]
 
@@ -73,6 +93,50 @@ Resources related to Cart.
     + Body
 
             true
-+ Parameters
-    + quantity (string) - Description
-    + sku (string) - Description
++ Attributes
+    + quantity (number) - Quantity to Add
+    + sku (string) - Product SKU
+  
+## Group Categories
+Resources related to Categories.
+
+
+### Retrieve List of Categories [GET /categories]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Session-Id: r2sf0ogulkccntoe02llkc5010
+            X-Auth-Token: 05dd174e4d66beb667a69dbef1ebb096169862f1
+    + Body
+
+            
++ Response 200 (application/json)
+
+    + Headers
+
+            
+    + Body
+
+            {"1":{"id":"1","name":"New Releases","sort":"1","status":"Active","description":"Explore our small variety of current release Acme Vineyards wines.","short_description":"","extended_description":"","image":"//s3.amazonaws.com/efcheckout/acmev/category/1-8891.jpg","image_2":"//s3.amazonaws.com/efcheckout/acmev/category-2/1-4190.jpg","image_3":"//s3.amazonaws.com/efcheckout/acmev/category-3/1-7775.jpg"},"2":{"id":"2","name":"Past Vintages","sort":"2","status":"Active","description":"Explore past vintages of Acme wines.","short_description":"","extended_description":"","image":"//s3.amazonaws.com/efcheckout/acmev/category/2-8644.jpg","image_2":"//s3.amazonaws.com/efcheckout/acmev/category-2/2-6628.jpg","image_3":"//s3.amazonaws.com/efcheckout/acmev/category-3/2-1813.jpg"}}
+
+### Retrieve a Category by Name [GET /categories/name/:name]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Session-Id: r2sf0ogulkccntoe02llkc5010
+            X-Auth-Token: 05dd174e4d66beb667a69dbef1ebb096169862f1
+    + Body
+
+            
++ Response 200 (application/json)
+
+    + Headers
+
+            
+    + Body
+
+            false
