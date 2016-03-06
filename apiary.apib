@@ -7,7 +7,7 @@ HOST: http://api.securecheckout.com/v1/cart/
 
 
 ## Group Categories
-Resources related to the Cart API.
+Resources related to Categories.
 
 
 ### Retrieve List of Categories [GET /categories]
@@ -18,8 +18,6 @@ Resources related to the Cart API.
 
             X-Session-Id: r2sf0ogulkccntoe02llkc5010
             X-Auth-Token: 05dd174e4d66beb667a69dbef1ebb096169862f1
-            Content-Type: application/json
-            Accept: application/json
     + Body
 
             
@@ -27,16 +25,16 @@ Resources related to the Cart API.
 
     + Headers
 
-            Date: Sat, 05 Mar 2016 23:34:48 GMTServer: Apache/2.2.15 (CentOS)Access-Control-Allow-Origin: *Content-Length: 816Connection: closeContent-Type: application/json
+            
     + Body
 
             {"1":{"id":"1","name":"New Releases","sort":"1","status":"Active","description":"Explore our small variety of current release Acme Vineyards wines.","short_description":"","extended_description":"","image":"//s3.amazonaws.com/efcheckout/acmev/category/1-8891.jpg","image_2":"//s3.amazonaws.com/efcheckout/acmev/category-2/1-4190.jpg","image_3":"//s3.amazonaws.com/efcheckout/acmev/category-3/1-7775.jpg"},"2":{"id":"2","name":"Past Vintages","sort":"2","status":"Active","description":"Explore past vintages of Acme wines.","short_description":"","extended_description":"","image":"//s3.amazonaws.com/efcheckout/acmev/category/2-8644.jpg","image_2":"//s3.amazonaws.com/efcheckout/acmev/category-2/2-6628.jpg","image_3":"//s3.amazonaws.com/efcheckout/acmev/category-3/2-1813.jpg"}}
 
 ## Group Cart
-Resources related to the Cart API.
+Resources related to Cart.
 
 
-### Retrieve Cart Information [GET /]
+### Retrieve Cart Information [GET ]
 
 + Request (application/json)
 
@@ -44,8 +42,6 @@ Resources related to the Cart API.
 
             X-Session-Id: r2sf0ogulkccntoe02llkc5010
             X-Auth-Token: 05dd174e4d66beb667a69dbef1ebb096169862f1
-            Content-Type: application/json
-            Accept: application/json
     + Body
 
             
@@ -53,10 +49,10 @@ Resources related to the Cart API.
 
     + Headers
 
-            Date: Sat, 05 Mar 2016 23:34:48 GMTServer: Apache/2.2.15 (CentOS)Access-Control-Allow-Origin: *Content-Length: 285Connection: closeContent-Type: application/json
+            
     + Body
 
-            {"subtotal":"0.00","credits":0,"discount":"0.00","shipping":"0.00","tax_rate":0,"tax":0,"total":"0.00","item_count":"","items":[],"config":{"customer_id":"0","address_id":"","payment_id":"","club_id":"","ship_method_id":"3","ship_method_address_lock":"0"},"shipment":{"address":false}}
+            {"subtotal":"225.00","credits":0,"discount":"0.00","shipping":"0.00","tax_rate":0,"tax":0,"total":"225.00","item_count":"5","items":{"12312312312":{"session":"r2sf0ogulkccntoe02llkc5010","sku":"12312312312","quantity":"5","price":"45.00","description":"2014 Rosu00e9 Napa Valley","expires":"2016-03-05 17:20:50","reserve_inventory":"0","id":"14","name":"2014 Rosu00e9","status":"Active","accolades_01":"","additional_description":"\"Unreal. A Napa Valley Cab that is truly worthy drinking.\"<br>u2014Wine Review Online","aging":"18 Months in French Barrels","alcohol":"16.5","appellation":"Oakville, Napa Valley","blend":"100% Cabernet Sauvignon","bottle_count":"1","bottle_size":"","case_production":"60","cost":"0.00","country":"","custom01":"","custom02":"","custom03":"","farming_method":"","featured_product":"Yes","free_shipping":"","harvest_date":"October 19, 2007","image":"//s3.amazonaws.com/efcheckout/acmev/product/12312312312-1725.jpg","image_alt":"//s3.amazonaws.com/efcheckout/acmev/product-alt/AV10NVCS-4211.jpg","label":"","max_purchase_quantity":"36","min_purchase_quantity":"","not_availible_message":"","oak":"40% new, 60% 2 year old","ph":"","product_category":"Wine","qb_account":"","qb_class":"","qb_sku":"","region":"","release_date":"September 1, 2012","residual_sugar":"","retail_price":"65.00","review":"Hello","reviewer":"Acme","score":"99","shipping_included":"0","shipping_offer_min":"","short_description":"Destined to be a classic example of an outstanding vintage from the legendary Napa Valley.","soil":"","stainless":"","starting_quantity":"99","status_availability":"Active","subtitle":"Napa Valley","sub_region":"","ta":".06","tasting_notes_pdf":"","tax_exempt":"0","upc":"","varietal":"","vineyard":"Black Hawk","vintage":"2007","winemaker":"Pepe LePepe","wine_type":"RED","categories":null}},"config":{"shipping_state":"IL","shipping_zip":"60010-6134","customer_id":"1","address_id":"4085","payment_id":"","club_id":"","ship_method_id":"3","ship_method_address_lock":"0"},"shipment":{"address":{"id":"4085","hash":"984c660798f096b6187e30deaa040be41e6d63a9","created":"2015-11-19 15:27:30","title":"ShippingAddress","first_name":"Tyson","last_name":"Caly","birthday":"0000-00-00","company":"","phone":"707-287-6262","email":"","address":"18 N Freeman Road","address_2":"","city":"Barrington","state":"IL","zip":"60010-6134","zip_ext":"","country":"US","residential":"0","customer_id":"1","default":"1","public":"0"}}}
 
 ### Add Item to Cart [POST /items]
 
@@ -66,8 +62,6 @@ Resources related to the Cart API.
 
             X-Session-Id: r2sf0ogulkccntoe02llkc5010
             X-Auth-Token: 05dd174e4d66beb667a69dbef1ebb096169862f1
-            Content-Type: application/json
-            Accept: application/json
     + Body
 
             {"sku":"12312312312","quantity":1}
@@ -75,11 +69,10 @@ Resources related to the Cart API.
 
     + Headers
 
-            Date: Sun, 06 Mar 2016 00:51:44 GMTServer: Apache/2.2.15 (CentOS)Access-Control-Allow-Origin: *Content-Length: 4Connection: closeContent-Type: application/json
+            
     + Body
 
             true
 + Parameters
-            + quantity (string) -             + sku (string) -     
-## Group 
-Resources related to the Cart API.
+        + quantity (string) - Description
+        + sku (string) - Description
