@@ -1,0 +1,85 @@
+FORMAT: 1A
+HOST: http://api.securecheckout.com/v1/cart/
+
+# Cart
+
+750 Cart is an API for creating customer facing applications powered by the 750 Commerce e-commerce platform.
+
+
+## Group Categories
+Resources related to the Cart API.
+
+
+### Retrieve List of Categories [GET /categories]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Session-Id: r2sf0ogulkccntoe02llkc5010
+            X-Auth-Token: 05dd174e4d66beb667a69dbef1ebb096169862f1
+            Content-Type: application/json
+            Accept: application/json
+    + Body
+
+            
++ Response 200 (application/json)
+
+    + Headers
+
+            Date: Sat, 05 Mar 2016 23:34:48 GMTServer: Apache/2.2.15 (CentOS)Access-Control-Allow-Origin: *Content-Length: 816Connection: closeContent-Type: application/json
+    + Body
+
+            {"1":{"id":"1","name":"New Releases","sort":"1","status":"Active","description":"Explore our small variety of current release Acme Vineyards wines.","short_description":"","extended_description":"","image":"//s3.amazonaws.com/efcheckout/acmev/category/1-8891.jpg","image_2":"//s3.amazonaws.com/efcheckout/acmev/category-2/1-4190.jpg","image_3":"//s3.amazonaws.com/efcheckout/acmev/category-3/1-7775.jpg"},"2":{"id":"2","name":"Past Vintages","sort":"2","status":"Active","description":"Explore past vintages of Acme wines.","short_description":"","extended_description":"","image":"//s3.amazonaws.com/efcheckout/acmev/category/2-8644.jpg","image_2":"//s3.amazonaws.com/efcheckout/acmev/category-2/2-6628.jpg","image_3":"//s3.amazonaws.com/efcheckout/acmev/category-3/2-1813.jpg"}}
+
+## Group Cart
+Resources related to the Cart API.
+
+
+### Retrieve Cart Information [GET /]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Session-Id: r2sf0ogulkccntoe02llkc5010
+            X-Auth-Token: 05dd174e4d66beb667a69dbef1ebb096169862f1
+            Content-Type: application/json
+            Accept: application/json
+    + Body
+
+            
++ Response 200 (application/json)
+
+    + Headers
+
+            Date: Sat, 05 Mar 2016 23:34:48 GMTServer: Apache/2.2.15 (CentOS)Access-Control-Allow-Origin: *Content-Length: 285Connection: closeContent-Type: application/json
+    + Body
+
+            {"subtotal":"0.00","credits":0,"discount":"0.00","shipping":"0.00","tax_rate":0,"tax":0,"total":"0.00","item_count":"","items":[],"config":{"customer_id":"0","address_id":"","payment_id":"","club_id":"","ship_method_id":"3","ship_method_address_lock":"0"},"shipment":{"address":false}}
+
+### Add Item to Cart [POST /items]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Session-Id: r2sf0ogulkccntoe02llkc5010
+            X-Auth-Token: 05dd174e4d66beb667a69dbef1ebb096169862f1
+            Content-Type: application/json
+            Accept: application/json
+    + Body
+
+            {"sku":"12312312312","quantity":1}
++ Response 200 (application/json)
+
+    + Headers
+
+            Date: Sun, 06 Mar 2016 00:51:44 GMTServer: Apache/2.2.15 (CentOS)Access-Control-Allow-Origin: *Content-Length: 4Connection: closeContent-Type: application/json
+    + Body
+
+            true
++ Parameters
+            + quantity (string) -             + sku (string) -     
+## Group 
+Resources related to the Cart API.
