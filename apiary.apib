@@ -838,6 +838,36 @@ Resources related to Payment.
 ### Create Payment Method [POST /payment]
 
 
++ Request (application/json)
+
+  + Attributes
+      + address (string, required) - Street Address
+      + address_2 (string, optional) - Unit Number
+      + card_token (string, required) - Stripe Credit Card Token
+      + card_type (string, required) - Credit Card Brand ie: Visa, American Express, etc
+      + city (string, required) - City
+      + credit_expires_month (string, required) - Expires Month ie: 06
+      + credit_expires_year (string, required) - Expires Year ie: 2016
+      + credit_number (string, required) - Last 4 Digits of Credit Card Number
+      + first_name (string, required) - Customer First Name
+      + last_name (string, required) - Customer Last Name
+      + phone (string, optional) - Customer Phone Number
+      + state (string, required) - State
+      + zip (string, required) - Zip Code
+  
+    + Headers
+
+            X-Session-Id:XXXXXXXX 
+            X-Auth-Token: XXXXXXXXXXXX
+    + Body
+
+            {"first_name":"Ian",   "last_name":"Tucker",   "address":"523 Brown St",   "city":"Napa",   "state":"CA",   "zip":"94559",   "address_2":"",   "phone":"707-501-7491",   "card_token":"XXXXXXXXXXXX",   "card_type":"American Express",   "credit_expires_month":"06",   "credit_expires_year":"2018",   "credit_number":"1234"}
+
++ Response 200 (application/json)
+
+    + Body
+
+            "4093"
 
 
 
