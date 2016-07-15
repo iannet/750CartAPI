@@ -262,6 +262,24 @@ Resources related to Authentication.
 ### Email Password Rest Token [POST /auth/send_token]
 
 
++ Request (application/json)
+
+  + Attributes
+      + username (string, required) - Customer Email Address
+  
+    + Headers
+
+            X-Session-Id:XXXXXXXXX
+            Auth-Token: XXXXXXXXXXXX
+    + Body
+
+            {"username":"example@750group.com"}
+
++ Response 200 (application/json)
+
+    + Body
+
+            true
 
 
 
@@ -277,6 +295,25 @@ Resources related to Authentication.
 ### Reset Password Using Token [POST /auth/reset]
 
 
++ Request (application/json)
+
+  + Attributes
+      + new_password (string, required) - New Password for Customer Account
+      + token (string, required) - Token returned by Email Password Reset Token method call
+  
+    + Headers
+
+            X-Session-Id:XXXXXXXXX
+            Auth-Token: XXXXXXXXXXXX
+    + Body
+
+            {"token":"XXXXXX","password":"XXXXXXXX"}
+
++ Response 200 (application/json)
+
+    + Body
+
+            true
 
 
 
@@ -1044,12 +1081,12 @@ Resources related to ShippingMethods.
 
 ### Get Details about Shipping Method [GET /shipping_methods/{id}]
 
-+ Parameters
-  + id (number, required) - Shipping Method Id
-
 
 + Request (application/json)
 
+  + Attributes
+      + id (number, required) - Shipping Method Id
+  
     + Headers
 
             X-Session-Id:XXXXXXXX 
