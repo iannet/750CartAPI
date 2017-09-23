@@ -817,6 +817,11 @@ Resources related to Customer.
 
 + Request (application/json)
 
+  + Attributes
+      + club_id (number, required) - Club Id
+      + address_id (number, required) - Address Id
+      + payment_id (number, required) - Payment Id
+
     + Headers
 
             X-Session-Id:XXXXXXXX 
@@ -849,6 +854,10 @@ Resources related to Customer.
 
 ### Update Club Membership [PUT /customer/clubs/{id}]
 
+  + Attributes
+      + address_id (number, optional) - Address Id
+      + payment_id (number, optional) - Payment Id
+      
 + Parameters
   + id (number, required) - Club Membership Id
 
