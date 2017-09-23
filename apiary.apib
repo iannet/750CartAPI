@@ -703,7 +703,6 @@ Resources related to Content.
 ### Get CMS Content [GET /content/{slug}]
 
 + Parameters
-  + 0 (NULL, required) - 
   + slug (string, required) - Content Id
 
 
@@ -800,13 +799,34 @@ Resources related to Customer.
   + id (number, required) - Club Membership Id
 
 
++ Request (application/json)
 
+    + Headers
 
+            X-Session-Id:XXXXXXXX 
+            X-Auth-Token: XXXXXXXXXXXX
+
++ Response 200 (application/json)
+
+    + Body
+
+            null
 
 ### Create New Club Membership [POST /customer/clubs]
 
 
++ Request (application/json)
 
+    + Headers
+
+            X-Session-Id:XXXXXXXX 
+            X-Auth-Token: XXXXXXXXXXXX
+
++ Response 200 (application/json)
+
+    + Body
+
+            null
 
 
 ### Get List of Club Memberships [GET /customer/clubs]
@@ -832,6 +852,19 @@ Resources related to Customer.
 + Parameters
   + id (number, required) - Club Membership Id
 
+
++ Request (application/json)
+
+    + Headers
+
+            X-Session-Id:XXXXXXXX 
+            X-Auth-Token: XXXXXXXXXXXX
+
++ Response 200 (application/json)
+
+    + Body
+
+            null
 
 
 ## Customer Orders [/customer/orders]
